@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Wardrobe Wizard</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <% if (typeof username !== 'undefined' && username) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home?username=<%= username %>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about?username=<%= username %>">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/outfit?username=<%= username %>">Generate Outfit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addClothes?username=<%= username %>">Upload Clothes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

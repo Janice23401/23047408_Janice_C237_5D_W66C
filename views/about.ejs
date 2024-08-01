@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wardrobe Wizard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel {
+        max-height: 300px; 
+        }
+
+        .carousel-item img {
+            width: 100%; 
+            height: auto; 
+            max-height: 300px; 
+            object-fit: contain; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <%- include('navbar') %>
+
+    <div class="container mt-5">
+        <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/uploads/closet.png" class="d-block w-100" alt="Closet">
+                </div>
+                <div class="carousel-item">
+                    <img src="/uploads/clothes.jpg" class="d-block w-100" alt="Clothes">
+                </div>
+                <div class="carousel-item">
+                    <img src="/uploads/girl confused.jpg" class="d-block w-100" alt="confused">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <h1 style="color: purple;">Create Your Digital Wardrobe</h1>
+            <h3>We are here to save your wardrobe!</h2>
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Step 1: Add in your clothes</h5>
+                      <p class="card-text">You can upload every single clothes in your wardrobe here!</p>
+                      <a href="/addClothes?username=<%= username %>" class="btn btn-primary">Upload Clothes</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Step 2: You could generate your daily outfit with just one click</h5>
+                      <p class="card-text">Not sure which outfit to wear? Generate it!</p>
+                      <a href="/outfit?username=<%= username %>" class="btn btn-primary">Generate Outfit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+        <h1 style="color: purple;">About Wardrobe Wizard</h1>
+        <p>Wardrobe Wizard is a platform that allows users to upload their clothes to a virtual wardrobe and helps them decide what to wear for the day. Our mission is to make wardrobe management easy and fun.</p>
+        <h2>Our Values</h2>
+        <ul>
+            <li>Innovation: We strive to innovate and improve.</li>
+            <li>Customer Focus: Our customers are at the heart of everything we do.</li>
+            <li>Integrity: We conduct our business with integrity.</li>
+        </ul>
+            <h1>Join us in saving your wardrobe and your daily outfit!</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
