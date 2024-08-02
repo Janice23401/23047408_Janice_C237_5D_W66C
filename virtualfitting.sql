@@ -1,5 +1,5 @@
-USE virtualfitting;
--- Database: `virtualfitting`
+USE janice_virtualfitting;
+-- Database: `janice_virtualfitting`
 --
 
 -- --------------------------------------------------------

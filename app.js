@@ -67,7 +67,7 @@ async function getUserClothes(username) {
 
 async function generateOutfit() {
     try {
-        const clothes = await getUserClothes(); // Retrieves clothes from virtual_fitting table
+        const clothes = await getUserClothes(); 
         if (clothes.length < 3) {
             throw new Error('Not enough clothes to generate an outfit');
         }
