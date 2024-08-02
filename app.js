@@ -30,7 +30,7 @@ const connection = mysql.createConnection({
     // user: 'root',
     // password: '',
     // database: 'virtualfitting'
-    host: 'mysql-janice12-alwaysdata.net',
+    host: 'mysql-janice-alwaysdata.net',
     user: 'janice12_virutalfitting',
     password: 'Eu12345!!!',
     database: 'virtualfitting'
