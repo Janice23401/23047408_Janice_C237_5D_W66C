@@ -26,9 +26,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'mysql-janice12-alwaysdata.net',
+    user: 'janice12_virutalfitting',
+    password: 'Eu12345!!!',
     database: 'virtualfitting'
 });
 
