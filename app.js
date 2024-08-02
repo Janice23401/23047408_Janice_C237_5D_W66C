@@ -257,25 +257,28 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
     const { username, password } = req.body;
-    if (username && password) {
-        bcrypt.hash(password, saltRounds, (err, hash) => {
-            if (err) {
-                console.error('Hashing error:', err);
+    
+    if (!username || !password) {
+        return res.status(400).send('Username and password are required');
+    }
+    
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+        if (err) {
+            console.error('Hashing error:', err);
+            return res.status(500).send('Internal server error');
+        }
+
+        const sql = 'INSERT INTO users (username, password) VALUES (?, ?)';
+        connection.query(sql, [username, hash], (error) => {
+            if (error) {
+                console.error('Database query error:', error.message);
                 return res.status(500).send('Internal server error');
             }
-            const sql = 'INSERT INTO users (username, password) VALUES (?, ?)';
-            connection.query(sql, [username, hash], (error) => {
-                if (error) {
-                    console.error('Database query error:', error.message);
-                    return res.status(500).send('Internal server error');
-                }
-                res.redirect('/login');
-            });
+            res.redirect('/login');
         });
-    } else {
-        res.status(400).send('Username and password are required');
-    }
+    });
 });
+
 
 app.get('/editClothes/:id', async (req, res) => {
     const clothesId = req.params.id;
