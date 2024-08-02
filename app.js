@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const multer = require('multer');
 const fs = require('fs');
 const app = express();
+const saltRounds = 10; 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
